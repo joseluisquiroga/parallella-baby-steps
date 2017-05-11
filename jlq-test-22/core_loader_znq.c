@@ -585,6 +585,7 @@ bjl_process_elf(const void *file, e_epiphany_t *dev, e_mem_t *emem,
 		isonchip = islocal ? true
 						   /* TODO: Don't cast to void */
 						   : e_is_addr_on_chip((void *) ((uintptr_t) phdr[ihdr].p_vaddr));
+		isexternal = false;
 
 		bjl_diag(L_D3) {
 			fprintf(bjl_diag_fd, "process_elf(): copying the data (%d bytes)",
